@@ -36,5 +36,7 @@
     
     exit 0
     ```
+    Сохраняем, идем в System > Reboot и перезагружаем роутер
+12) Далее можем проверить, что изменения применились, для этого подключаемся к роутеру по ssh и вводим команду fw_printenv . В результате мы должны увидеть что flag_try_sys1_failed и flag_try_sys2_failed равны 0
 
 https://www.youtube.com/watch?v=jhKnUGJv81c
