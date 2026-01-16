@@ -208,6 +208,7 @@ config rule
 ```nano /etc/config/firewall```
 
 И вносим правила:
+
 Трафик одного устройства в vpn-туннель:
 
 ```
