@@ -104,10 +104,10 @@ service sing-box restart && service network restart
 Сохраняем все это дело и перезагружаем роутер System > Reboot
 
 # И кажется что на этом всё... Но, нет
-Скорее всего, после всей проделанной работы всё у вас будет работать замечательно, кроме голосовых каналов в Discord, чтобы это дело подправить - делаем следующее подключившись к нашему роутеру по ssh:
+Скорее всего, после всей проделанной работы всё у вас будет работать замечательно, кроме Telegram и голосовых каналов в Discord, чтобы это дело подправить - делаем следующее подключившись к нашему роутеру по ssh:
 
-- Добавляем кастомные домены дискорда, которых нет в основных обновляемых списках маршрутов
-- Добавляем ip-адреса и подсети голосовых каналов discord бонусом к списку доменов
+- Добавляем кастомные домены Telegram, которых нет в основных обновляемых списках маршрутов
+- Добавляем ip-адреса и подсети голосовых каналов Discord и Telegram бонусом к списку доменов
 
 ## Добавление кастомных доменов
 Открываем конфиг любым консольным текстовым редактором например nano, который скрипт устанавливает попутно:
@@ -119,13 +119,26 @@ service sing-box restart && service network restart
 ```
 config ipset
         list name 'vpn_domains'
-        list domain 'media.discordapp.net'
-        list domain 'gateway.discord.gg'
-        list domain 'cdn.discordapp.com'
-        list domain 'images-ext-1.discordapp.net'
-        list domain 'discord.app'
-        list domain 'discordcdn.com'
-        list domain 'cloudflare-ech.com'
+        list domain 'cdn-telegram.org'
+        list domain 'comments.app'
+        list domain 'contest.com'
+        list domain 'fragment.com'
+        list domain 'graph.org'
+        list domain 'quiz.directory'
+        list domain 't.me'
+        list domain 'tdesktop.com'
+        list domain 'telega.one'
+        list domain 'telegra.ph'
+        list domain 'telegram-cdn.org'
+        list domain 'telegram.dog'
+        list domain 'telegram.me'
+        list domain 'telegram.org'
+        list domain 'telegram.space'
+        list domain 'telesco.pe'
+        list domain 'tg.dev'
+        list domain 'tx.me'
+        list domain 'usercontent.dev'
+        list domain 'ton.org'
 ```
 
 И после делаем ```service dnsmasq restart```
@@ -141,45 +154,23 @@ config ipset
 config ipset
   option name 'vpn_subnet'
   option match 'dst_net'
-  list entry '31.13.24.0/21'
-  list entry '31.13.64.0/18'
-  list entry '45.64.40.0/22'
-  list entry '57.141.0.0/24'
-  list entry '57.141.3.0/24'
-  list entry '57.141.5.0/24'
-  list entry '57.141.7.0/24'
-  list entry '57.141.8.0/24'
-  list entry '57.141.10.0/24'
-  list entry '57.141.13.0/24'
-  list entry '57.144.0.0/14'
-  list entry '66.220.144.0/20'
-  list entry '69.63.176.0/20'
-  list entry '69.171.224.0/19'
-  list entry '74.119.76.0/22'
-  list entry '102.132.96.0/20'
-  list entry '103.4.96.0/22'
-  list entry '129.134.0.0/17'
-  list entry '157.240.0.0/17'
-  list entry '157.240.192.0/18'
-  list entry '163.70.128.0/17'
-  list entry '173.252.64.0/18'
-  list entry '179.60.192.0/22'
-  list entry '185.60.216.0/22'
-  list entry '185.89.216.0/22'
-  list entry '204.15.20.0/22'
   list entry '138.128.136.0/21'
   list entry '162.158.0.0/15'
   list entry '172.64.0.0/13'
   list entry '34.0.0.0/15'
-  list entry '34.2.0.0/16'
-  list entry '34.3.0.0/23'
-  list entry '34.3.2.0/24'
+  list entry '34.2.0.0/15'
   list entry '35.192.0.0/12'
   list entry '35.208.0.0/12'
-  list entry '35.224.0.0/12'
-  list entry '35.240.0.0/13'
   list entry '5.200.14.128/25'
   list entry '66.22.192.0/18'
+  list entry '91.105.192.0/23'
+  list entry '91.108.4.0/22'
+  list entry '91.108.8.0/21'
+  list entry '91.108.16.0/21'
+  list entry '91.108.56.0/22'
+  list entry '95.161.64.0/20'
+  list entry '149.154.160.0/20'
+  list entry '185.76.151.0/24'
 
 config rule
   option name 'mark_subnet'
@@ -196,7 +187,7 @@ config rule
 
 ```service firewall restart```
 
-Айпишники дискордовских голосовых каналов находятся в конце списка, начиная с 138.128.136.0/21 - остальное это всякие айпишники для картиночек и голосовух в соцсетях, в целом тоже полезное, можете оставить, можете убрать
+Айпишники дискордовских голосовых каналов - это первые 9, остальные нужны для Telegram
 
 # Вариативность перенаправления трафика
 Мы можем направлять трафик конкретных устройств в туннель целиком, либо наоборот полностью пускать трафик через провайдера, в обход наших правил для туннелирования.
