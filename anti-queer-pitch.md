@@ -6,8 +6,8 @@
 
 Порядок раскирпичивания/отката на родную прошивку:
 1. Роутер должен быть выключен до достижения пункта 5
-2. Скачиваем Xiaomi Recovery Tool (http://bigota.miwifi.com/xiaoqiang/tools/MIWIFIRepairTool.x86.zip). Распаковываем и запускаем MIWIFIRepairTool.x86.exe
-3. Скачиваем прошивку для роутера (на данный момент, актуальная глобальная версия прошивки - 1.0.83: http://cdn.awsde0-fusion.fds.api.mi-img.com/xiaoqiang/rom/rb01/miwifi_rb01_firmware_d8243_1.0.83_INT.bin).
+2. Скачиваем из официального источника [Xiaomi Recovery Tool](http://bigota.miwifi.com/xiaoqiang/tools/MIWIFIRepairTool.x86.zip), либо берем в этом репозитории. Распаковываем и запускаем MIWIFIRepairTool.x86.exe
+3. Скачиваем прошивку для роутера из официального источника [1.0.83](http://cdn.awsde0-fusion.fds.api.mi-img.com/xiaoqiang/rom/rb01/miwifi_rb01_firmware_d8243_1.0.83_INT.bin), либо берем в этом репозитории.
    В Xiaomi Recovery Tool нажимаем на кнопку "??" и выбираем файл прошивки. Далее нажимаем "???" внизу справа.
 4. В параметрах сетевого интерфейса ставим значения IP-адреса 192.168.31.100 и маску подсети 255.255.255.0:
    (Пуск - Параметры - Сеть и Интернет - Ethernet - Назначение IP - Вручную - IPv4 включить - указать IP-адрес 192.168.31.100 и шлюз 255.255.255.0 - Сохранить). В поле выбираем подключение "Ethernet -> 192.168.31.100"
