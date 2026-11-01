@@ -13,7 +13,8 @@
 3) [openWRT 23.05.5](https://firmware-selector.openwrt.org/?version=23.05.5&target=mediatek%2Fmt7622&id=xiaomi_redmi-router-ax6s)
 4) [openWRT 24.10.5](https://firmware-selector.openwrt.org/?version=24.10.5&target=mediatek%2Fmt7622&id=xiaomi_redmi-router-ax6s)
 5) [openWRT 25.12.5](https://firmware-selector.openwrt.org/?version=25.12.5&target=mediatek%2Fmt7622&id=xiaomi_redmi-router-ax6s)
-6) [стоковая прошивка](http://cdn.awsde0-fusion.fds.api.mi-img.com/xiaoqiang/rom/rb01/miwifi_rb01_firmware_d8243_1.0.83_INT.bin)
+6) [openWRT 25.12.6](https://firmware-selector.openwrt.org/?version=25.12.6&target=mediatek%2Fmt7622&id=xiaomi_redmi-router-ax6s)
+7) [стоковая прошивка](http://cdn.awsde0-fusion.fds.api.mi-img.com/xiaoqiang/rom/rb01/miwifi_rb01_firmware_d8243_1.0.83_INT.bin)
 
 Как установить прошивку:
 
@@ -54,7 +55,7 @@
 Если у вас стояла версия 23.05.5, то обновиться на 24.10.5 простым способом не получится, для начала придется откатиться на стоковую прошивку, а затем поставить версию 24.10.5 способом выше.
 Откат на стоковую прошивку описан [ЗДЕСЬ](https://github.com/Ultraheal/great-win-of-the-horde/blob/main/anti-queer-pitch.md)(он же гайд по раскрипичиванию)
 
-# Обновление openWRT с 24.10.5 на 25.12.5
+# Обновление openWRT с 24.10.5 на 25.12.5 и выше
 Перед началом необходимо зайти в веб-интерфейс роутера и сделать бэкап настроек System -> Backup / Flash Firmware -> Generate archive
 Также необходимо скачать либо в этом репозитории, либо с официального сайта(ссылки выше) sysupgrade файл 25.12.5 прошивки
 
